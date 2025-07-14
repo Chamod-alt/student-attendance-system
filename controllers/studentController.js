@@ -12,7 +12,7 @@ export const addStudent = async (req, res) => {
   const { name, email, age, rollNo, attendance,date } = req.body;
 
   try {
-    const studentsRef = db.ref(`grades/${gradeId}/classes/${classId}/students`);
+    const studentsRef = db.ref(`grades/${gradeId}/classes/${classId}/students`);// pth of students database
     const snapshot = await studentsRef.once("value");
     const students = snapshot.val() || {};
 
@@ -27,7 +27,7 @@ export const addStudent = async (req, res) => {
       });
     }
 
-    const newStudentRef = studentsRef.push();
+    const newStudentRef = studentsRef.push();// push to newStudentRef
     await newStudentRef.set({
       name,
       email,
@@ -50,7 +50,7 @@ export const addStudent = async (req, res) => {
 };
 //
 
-
+// get student list
 export const getStudents = async (req, res) => {
   const { gradeId, classId } = req.params;
   const snapshot = await db.ref(`grades/${gradeId}/classes/${classId}/students`).once("value");
@@ -98,7 +98,7 @@ export const updateStudent = async (req, res) => {
 };
 
 
-//
+//delete student
 export const deleteStudent = async (req, res) => {
   const { gradeId, classId, studentId } = req.params;
   await db.ref(`grades/${gradeId}/classes/${classId}/students/${studentId}`).remove();

@@ -34,7 +34,7 @@ const serviceAccount = {
 
 const app = initializeApp({
   credential: cert(serviceAccount),
-  databaseURL: process.env.FIREBASE_DATABASE_URL,
+  databaseURL: process.env.FIREBASE_DATABASE_URL, // firrebase database url
 });
 
 const db = getDatabase();

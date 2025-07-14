@@ -77,7 +77,7 @@ describe("Student Routes", () => {
 
   it("should return students", async () => {
     const res = await request(app).get("/api/students/grade1/class1");
-    console.log("GET Response:", res.body); // Debug
+    console.log("GET Response:", res.body); 
     expect(res.statusCode).toBe(200);
     
   });

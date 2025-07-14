@@ -9,9 +9,9 @@ import {
 
 const router = express.Router();
 
-router.post("/:gradeId", body("name").notEmpty(), addClass);
-router.get("/:gradeId", getClasses);
-router.put("/:gradeId/:classId", body("name").notEmpty(), updateClass);
-router.delete("/:gradeId/:classId", deleteClass);
+router.post("/:gradeId", body("name").notEmpty(), addClass); //post route
+router.get("/:gradeId", getClasses);// get route
+router.put("/:gradeId/:classId", body("name").notEmpty(), updateClass);// update route
+router.delete("/:gradeId/:classId", deleteClass);// delete route
 
 export default router;
